@@ -1,0 +1,14 @@
+theme = "Catppuccin Frappe"
+font-family = "JetBrains Mono"
+font-size = 16
+mouse-hide-while-typing = true
+window-decoration = true 
+window-theme = ghostty
+background-opacity = 0.9
+background-blur = 90
+title = 👻 
+
+# Key binds
+keybind = alt+shift+h=new_split:down
+keybind = alt+shift+v=new_split:right
+
