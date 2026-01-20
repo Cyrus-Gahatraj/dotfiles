@@ -32,9 +32,17 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 # Key Binds
-bindkey '^E' autosuggest-accept
+bindkey '^Y' autosuggest-accept
 
 # Alias
 
 alias ls="ls --color"
 alias vim="nvim"
+
+# fzf
+source <(fzf --zsh) fzf
+
+# tmux
+if [[ -z "$TMUX" && -n "$PS1" ]]; then
+	tmux
+fi
