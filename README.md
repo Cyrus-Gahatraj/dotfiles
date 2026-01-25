@@ -10,6 +10,7 @@ Everything is symlinked into place using Stow to keep `$HOME` clean and portable
 - **Ghostty** – Terminal emulator
 - **Zsh** – Shell
 - **Neovim** – Editor
+- **Tmux** - Terminal Multiplexer
 
 ## Requirements
 
