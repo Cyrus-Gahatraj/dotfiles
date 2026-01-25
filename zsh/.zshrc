@@ -13,8 +13,14 @@ fi
 source "$ANTIDOTE_HOME/antidote.zsh"
 antidote load "$DOTFILES/zsh/.zsh_plugins.txt"
 
+# Omarchy
+source ~/.local/share/omarchy/default/bash/aliases
+
 # Starship
 STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
+
+
+# Eval
 eval "$(starship init zsh)"
 
 # History
@@ -35,9 +41,30 @@ setopt HIST_SAVE_NO_DUPS
 bindkey '^Y' autosuggest-accept
 
 # Alias
-
 alias ls="ls --color"
-alias vim="nvim"
+
+if command -v nvim &> /dev/null; then
+	alias vim="nvim"
+fi
+
+if command -v zoxide &> /dev/null; then
+  alias cd="zd"
+  zd() {
+    if [ $# -eq 0 ]; then
+      builtin cd ~ && return
+    elif [ -d "$1" ]; then
+      builtin cd "$1"
+    else
+      z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
+    fi
+  }
+fi
+
+if command -v eza &> /dev/null; then
+	alias ls='eza --icons=auto'
+	alias ll='ls -lh'
+	alias lt='eza --tree --level=2 --long --icons --git'
+fi
 
 # fzf
 source <(fzf --zsh) fzf
