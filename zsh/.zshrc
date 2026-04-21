@@ -1,6 +1,6 @@
 # Zsh Config
 
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/dotfiles"
 
 # Antidote Package Manager
 ANTIDOTE_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/.antidote"
@@ -14,7 +14,7 @@ source "$ANTIDOTE_HOME/antidote.zsh"
 antidote load "$DOTFILES/zsh/.zsh_plugins.txt"
 
 # Omarchy
-source ~/.local/share/omarchy/default/bash/aliases
+# source ~/.local/share/omarchy/default/bash/aliases
 
 # Starship
 STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
